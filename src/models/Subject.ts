@@ -6,7 +6,7 @@ interface SubjectSource {
   subscribe: (observer: Observer) => void;
   unsubscribe: (observer: Observer) => void;
   mutate: (newState: State) => void;
-  notify: (message: Message) => void;
+  notify: (message?: Message) => void;
 }
 
 export default abstract class Subject implements SubjectSource {
@@ -16,5 +16,5 @@ export default abstract class Subject implements SubjectSource {
   public abstract subscribe(observer: Observer): void;
   public abstract unsubscribe(observer: Observer): void;
   public abstract mutate(newState: State): void;
-  public abstract notify(message: Message): void;
+  public abstract notify(message?: Message): void;
 }
